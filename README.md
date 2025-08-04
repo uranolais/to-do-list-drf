@@ -247,15 +247,6 @@ gunicorn backend.wsgi:application
 - ✅ Uso de recursos
 - ✅ Cobertura de testes
 
-## 🤝 Contribuição
-
-### Como Contribuir
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
 ### Padrões de Código
 - ✅ PEP 8 para Python
 - ✅ ESLint para JavaScript
