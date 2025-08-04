@@ -1,0 +1,42 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+
+{% block content_title %}
+    <h1>Gerenciamento de Tarefas</h1>
+{% endblock %}
+
+{% block object-tools-items %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <!-- Estatísticas -->
+    <div style="margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+        <h3 style="margin-top: 0; color: #333;">📊 Estatísticas</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div style="background: white; padding: 15px; border-radius: 5px; text-align: center; border-left: 4px solid #007bff;">
+                <h4 style="margin: 0; color: #007bff;">Total de Tarefas</h4>
+                <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">{{ total_tasks }}</p>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 5px; text-align: center; border-left: 4px solid #28a745;">
+                <h4 style="margin: 0; color: #28a745;">Concluídas</h4>
+                <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">{{ completed_tasks }}</p>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 5px; text-align: center; border-left: 4px solid #ffc107;">
+                <h4 style="margin: 0; color: #ffc107;">Pendentes</h4>
+                <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">{{ pending_tasks }}</p>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 5px; text-align: center; border-left: 4px solid #dc3545;">
+                <h4 style="margin: 0; color: #dc3545;">Atrasadas</h4>
+                <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">{{ overdue_tasks }}</p>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 5px; text-align: center; border-left: 4px solid #6f42c1;">
+                <h4 style="margin: 0; color: #6f42c1;">Taxa de Conclusão</h4>
+                <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">{{ completion_rate|floatformat:1 }}%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo original -->
+    {{ block.super }}
+{% endblock %} 
